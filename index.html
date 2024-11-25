@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Changer - JS Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+      }
+      h1 {
+        font-size: 44px;
+      }
+      .image_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .image_container img {
+        max-width: 500px;
+        border-radius: 12px;
+      }
+      .image_container h2 {
+        font-size: 24px;
+        padding: 12px 32px;
+        background: #fff;
+        color: #000;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Hover to Change the Image</h1>
+      <div class="image_container">
+        <img
+          src="https://images.unsplash.com/photo-1716388781968-e807f87fe910?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGhha2F8ZW58MHx8MHx8fDA%3D"
+          alt="boat images in Dhaka"
+        />
+        <h2>Dhaka</h2>
+      </div>
+    </main>
+    <script>
+      const img = document.querySelector("img");
+      const h2 = document.querySelector("h2");
+      const prevSrc = img.src;
+      const prevText = h2.innerText;
+
+      img.addEventListener("mouseover", () => {
+        img.src =
+          "https://images.unsplash.com/photo-1703944719031-3301e857c653?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNoaXR0YWdvbmd8ZW58MHx8MHx8fDA%3D";
+        h2.innerText = "Chattogram";
+      });
+
+      img.addEventListener("mouseleave", () => {
+        img.src = prevSrc;
+        h2.innerText = prevText;
+      });
+    </script>
+  </body>
+</html>
